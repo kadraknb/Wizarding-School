@@ -24,23 +24,37 @@
         <button id="login">Entrar</button>
       </form>
     </header>
-    <main id="flex-main" >
-        <form id="evaluation-form" action="">
+    <main id="flex-main">
+      <form id="evaluation-form" action="">
+        <div>
+          <input class="input" id="input-name" type="text" placeholder="Nome" />
+          <input
+            class="input"
+            id="input-lastname"
+            type="text"
+            placeholder="Sobrenome"
+          />
+          <input id="input-email" type="email" placeholder="Email" />
+          <select name="" id="house">
+            <option id="gitnoria-house" value="Gitnória">Gitnória</option>
+            <option id="reactpuff-house" value="Reactpuff">Reactpuff</option>
+            <option id="corvinode-house" value="Corvinode">Corvinode</option>
+            <option id="pytherina-house" value="Pytherina">Pytherina</option>
+          </select>
+        </div>
+        <p id="label-family">Qual sua família?</p>
+        <div id="test">
+          <input type="radio" name="family" value="Frontend" />Frontend
+          <input type="radio" name="family" value="Backend" />Backend
+          <input type="radio" name="family" value="FullStack" />FullStack
+        </div>
+      </form>
 
-            <input id="input-name" type="text" placeholder="Nome">
-            <input id="input-lastname" type="text" placeholder="Sobrenome">
-            <input id="input-email" type="email" placeholder="Email" >
-            <select name="" id="house">
-                <option id="gitnoria-house" value="Gitnória">Gitnória</option>
-                <option id="reactpuff-house" value="Reactpuff">Reactpuff</option>
-                <option id="corvinode-house" value="Corvinode">Corvinode</option>
-                <option id="pytherina-house" value="Pytherina">Pytherina</option>
-            </select>
-
-
-        </form>
-
-        <img id="trybewarts-forms-logo" src="./images/trybewarts-colored.svg" alt="trybewarts-forms-logo">
+      <img
+        id="trybewarts-forms-logo"
+        src="./images/trybewarts-colored.svg"
+        alt="trybewarts-forms-logo"
+      />
     </main>
     <script src="./script.js"></script>
   </body>
