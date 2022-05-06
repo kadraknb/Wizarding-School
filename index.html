@@ -9,13 +9,12 @@
   </head>
   <body>
     <header class="header">
-      <figure>
-        <img
-          class="trybewarts-header-logo"
-          src="./images/trybewarts-header-logo.svg"
-          alt="logo trybe"
-        />
-      </figure>
+      <img
+        class="trybewarts-header-logo"
+        src="./images/trybewarts-header-logo.svg"
+        alt="logo trybe"
+      />
+
       <h1 id="trybewarts-header-title">Trybewarts</h1>
 
       <form class="trybewarts-login" action="">
@@ -27,64 +26,37 @@
     <main id="flex-main">
       <form id="evaluation-form" action="">
         <div>
+
           <input class="input" id="input-name" type="text" placeholder="Nome" />
-          <input
-            class="input"
-            id="input-lastname"
-            type="text"
-            placeholder="Sobrenome"
-          />
+          <input class="input" id="input-lastname" type="text" placeholder="Sobrenome"/>
           <input id="input-email" type="email" placeholder="Email" />
-          <select name="" id="house">
-            <option id="gitnoria-house" value="Gitnória">Gitnória</option>
-            <option id="reactpuff-house" value="Reactpuff">Reactpuff</option>
-            <option id="corvinode-house" value="Corvinode">Corvinode</option>
-            <option id="pytherina-house" value="Pytherina">Pytherina</option>
-          </select>
-        </div>
-        <p id="label-family">Qual sua família?</p>
-        <div id="radio-family">
-          <input type="radio" name="family" value="Frontend" />Frontend
-          <input type="radio" name="family" value="Backend" />Backend
-          <input type="radio" name="family" value="FullStack" />FullStack
+          Casa:<select name="" id="house"></select>
+          
         </div>
 
-        <label id="label-content" for="">
-          <p>Qual conteúdo você está com mais vontade de aprender?</p>
-        </label>
-        <input type="checkbox" value="HoFs" />HoFs
-        <input type="checkbox" value="Jest" />Jest
-        <input type="checkbox" value="Promises" />Promises
-        <input type="checkbox" value="React" />React
-        <input type="checkbox" value="SQL" />SQL
-        <input type="checkbox" value="Python" />Python
+        <div id="radio-family">
+          <p id="label-family">Qual sua família?</p>
+        </div>
+
+        <div id="checkboxSubj">
+          <p id="label-content">
+            Qual conteúdo você está com mais vontade de aprender?
+          </p>
+        </div>
 
         <div>
-          <label id="label-rate" for="">
-            <p>Como você avalia a Trybewarts?</p>
-          </label>
-          <input type="radio" name="rate" value="1" />1
-          <input type="radio" name="rate" value="2" />2
-          <input type="radio" name="rate" value="3" />3
-          <input type="radio" name="rate" value="4" />4
-          <input type="radio" name="rate" value="5" />5
-          <input type="radio" name="rate" value="6" />6
-          <input type="radio" name="rate" value="7" />7
-          <input type="radio" name="rate" value="8" />8
-          <input type="radio" name="rate" value="9" />9
-          <input type="radio" name="rate" value="10" />10
+          <p id="label-rate">Como você avalia a Trybewarts?</p>
+          <div id="#input-radio"></div>
         </div>
-        <label class="textarea" for=""> <p>Deixe seu comentário:</p></label>
 
+        <p class="textarea">Deixe seu comentário:</p>
         <textarea id="textarea" cols="30" rows="10" maxlength="500"></textarea>
+        <p id="counter">500</p>
 
-         <p id="counter">500 </p>
-
-        <label id="label-infos" for="">
-          <p>"Você concorda com o uso das informações acima?"</p>
-          <input type="checkbox" id="agreement" required />
-        </label>
-
+        <label id="label-infos" for="agreement">
+          <p>"Você concorda com o uso das informações acima?"</p></label>
+          <input type="checkbox" id="agreement" required/>
+        
         <button id="submit-btn" type="submit" disabled>Enviar</button>
       </form>
 
@@ -93,8 +65,6 @@
         src="./images/trybewarts-colored.svg"
         alt="trybewarts-forms-logo"
       />
-      
-      
     </main>
     <footer>Direitos reservados à Trybewarts©</footer>
     <script src="./script.js"></script>
