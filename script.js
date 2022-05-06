@@ -11,8 +11,8 @@ document.querySelector('#login').addEventListener('click', () => {
 
 document.querySelector('#agreement').addEventListener('click', () => {
   if (document.querySelector('#agreement').checked === true) {
-    document.querySelector('#submit-btn').outerHTML =
-     '<button id="submit-btn" type="submit" >Enviar</button>';
+    document.querySelector('#submit-btn').outerHTML = `<button id="submit-btn" 
+    type="submit" >Enviar</button>`;
   }
 });
 
@@ -32,8 +32,9 @@ function criarLabelInput(idLocal, tipo, texto, quant) {
 const idHouse = ['gitnoria-house', 'reactpuff-house', 'corvinode-house', 'pytherina-house'];
 const valueHouse = ['Gitnória', 'Reactpuff', 'Corvinode', 'Pytherina'];
 for (let i = 0; i < 4; i += 1) {
-  document.querySelector('#house').appendChild(document.createElement('option')).outerHTML =
-  `<option id="${idHouse[i]}" value="${valueHouse[i]}">${valueHouse[i]}</option>`;
+  document.querySelector('#house').appendChild(document.createElement('option')).outerHTML = `
+  <option id="${idHouse[i]}"
+   value="${valueHouse[i]}">${valueHouse[i]}</option>`;
 }
 // radio-family family
 const textoArr = ['Frontend', 'Backend', 'FullStack'];
