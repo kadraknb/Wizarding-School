@@ -31,9 +31,10 @@
           <input id="input-email" type="email" placeholder="Email" />
           Casa:<select name="" id="house"></select>
         </div>
-
+        
+<p id="label-family">Qual sua família?</p>
         <div id="radio-family">
-          <p id="label-family">Qual sua família?</p>
+          
         </div>
 
         <div id="checkboxSubj">
@@ -46,18 +47,21 @@
           <p id="label-rate">Como você avalia a Trybewarts?</p>
           <div id="input-radio"></div>
         </div>
-
+        
         <p class="textarea">Deixe seu comentário:</p>
         <textarea id="textarea" cols="30" rows="10" maxlength="500"></textarea>
         <p id="counter">500</p>
 
-        <label id="label-infos" for="agreement">
-          <p>"Você concorda com o uso das informações acima?"</p></label>
+        <div>
+          <label id="label-infos" for="agreement">
+          Você concorda com o uso das informações acima?</label>
           <input type="checkbox" id="agreement" required/>
+        </div>
         
         <button id="submit-btn" type="submit" disabled>Enviar</button>
-        <div id="form">
-        </div>
+
+        <div id="form"></div>
+
       </form>
 
       <img
@@ -66,7 +70,7 @@
         alt="trybewarts-forms-logo"
       />
     </main>
-    
+    <br>
     <footer>Direitos reservados à Trybewarts©</footer>
     <script src="./script.js"></script>
   </body>
