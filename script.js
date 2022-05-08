@@ -1,3 +1,4 @@
+// confirir login
 document.querySelector('#login').addEventListener('click', () => {
   if (
     document.querySelector('#email').value === 'tryber@teste.com'
@@ -8,24 +9,17 @@ document.querySelector('#login').addEventListener('click', () => {
     alert('Email ou senha inválidos.');
   }
 });
-
-document.querySelector('#agreement').addEventListener('click', () => {
-  if (document.querySelector('#agreement').checked === true) {
-    document.querySelector('#submit-btn').outerHTML = `<button id="submit-btn" 
-    type="submit" >Enviar</button>`;
-  }
-});
-
+// contador do texto
 document.querySelector('#textarea').addEventListener('keyup', () => {
   const textLenght = document.querySelector('#textarea').value.length;
   document.querySelector('#counter').innerHTML = 500 - textLenght;
 });
-
+// criarLabelInput
 function criarLabelInput(idLocal, tipo, texto, quant) {
-  const id2 = idLocal.slice(1);
+  // const id2 = idLocal.slice(1);
   document.getElementById(idLocal)
-    .appendChild(document.createElement('label')).outerHTML = `<label for="${id2}${quant}">
-    <input id="${id2}${quant}" type="${tipo}" name="" value="${texto}">${texto}
+    .appendChild(document.createElement('label')).outerHTML = `<label for="${idLocal}${quant}">
+    <input id="${idLocal}${quant}" class="${idLocal}" type="${tipo}" name="" value="${texto}">${texto}
     </label>`;
 }
 // Casa house
@@ -40,16 +34,132 @@ for (let i = 0; i < 4; i += 1) {
 const textoArr = ['Frontend', 'Backend', 'FullStack'];
 for (let i = 0; i < 3; i += 1) {
   criarLabelInput('radio-family', 'radio', textoArr[i], i);
-  document.querySelector(`#adio-family${i}`).name = 'family';
+  document.querySelector(`#radio-family${i}`).name = 'family';
 }
 // subject
 const subject = ['HoFs', 'Jest', 'Promises', 'React', 'SQL', 'Python'];
 for (let i = 0; i < 6; i += 1) {
   criarLabelInput('checkboxSubj', 'checkbox', subject[i], i);
-  document.querySelector(`#heckboxSubj${i}`).className = 'subject';
+  document.querySelector(`#checkboxSubj${i}`).className = 'subject';
 }
 // input-radio rate
 for (let i = 1; i < 11; i += 1) {
-  criarLabelInput('#input-radio', 'radio', i, i);
+  criarLabelInput('input-radio', 'radio', i, i);
   document.querySelector(`#input-radio${i}`).name = 'rate';
 }
+
+document.querySelector('#form').innerText =
+  `Nome: Alguem Aqui 
+ Email: email@mail.com 
+ Casa: Casa Escolhida 
+ Família: Família Escolhida 
+ Matérias: Matérias, Marcadas, Aqui 
+ Avaliação: NotaAqui 
+ Observações: Observações aqui`;
+
+/* let family = null;
+let aprender = '';
+let rate = null;
+function valor() {
+ for (let i = 1; i < 11; i += 1) {
+   if (document.querySelector(`#input-radio${i}`).checked === true) {
+     rate = document.querySelector(`#input-radio${i}`).value;
+   }
+   if (document.querySelector(`#checkboxSubj${i}`).checked === true) {
+     aprender += ` ${document.querySelector(`#checkboxSubj${i}`).value}`;
+   }
+   if (document.querySelector(`#radio-family${i}`).checked === true) {
+     family = document.querySelector(`#radio-family${i}`).value;
+   }
+ }
+} */
+let aprender = '';
+
+
+function subjectChecked() {
+  const check = document.querySelectorAll('.subject:checked');
+  for (let i = 0; i < check.length; i += 1) {
+    aprender += ` ${check[i].value}`;
+  }
+  return aprender;
+}
+
+// salva form
+function salvaForm() {
+  const check = document.querySelectorAll('.subject:checked');
+  for (let i = 0; i < check.length; i += 1) {
+    aprender += `${check[i].value}, `;
+  }
+  const nome = document.querySelector('#input-name').value;
+  const sobreNome = document.querySelector('#input-lastname').value;
+  const email = document.querySelector('#input-email').value;
+  const casa = document.querySelector('#house').value;
+  const family = document.querySelector('.radio-family:checked').value;
+  const rate = document.querySelector('.input-radio:checked').value;
+  const texto = document.querySelector('#textarea').value;
+  document.querySelector('#form').innerText = `Nome: ${nome} ${sobreNome} 
+      Email: ${email} 
+      Casa: ${casa} 
+      Família: ${family} 
+      Matérias: ${aprender} 
+      Avaliação: ${rate} 
+      Observações: ${texto}`;
+}
+
+// document.querySelector('#evaluation-form').innerHTML
+// document.querySelector('#form').innerText =
+
+/* function getUserValue(event) {
+  event.preventDefault();
+  console.log('sim');
+} */
+// desativa button
+document.querySelector('#agreement').addEventListener('click', () => {
+  if (document.querySelector('#agreement').checked === true) {
+    document.querySelector('#submit-btn').outerHTML = `<button id="submit-btn" 
+    type="submit" >Enviar</button>`;
+
+    const button = document.querySelector('#submit-btn');
+    button.addEventListener('click', () => {
+      event.preventDefault();
+      console.log('sim');
+      salvaForm();
+    });
+  }
+});
+
+
+
+
+
+
+/* const nome = document.querySelector('#input-name').value;
+const sobreNome = document.querySelector('#input-lastname').value;
+const email = document.querySelector('#input-email').value;
+const casa = document.querySelector('#house').value;
+let family = null;
+let aprender = '';
+let rate = null;
+const texto = document.querySelector('#textarea').value;
+
+for (let i = 0; i < 3; i += 1) {
+  if (document.querySelector(`#radio-family${i}`).checked === true) {
+    family = document.querySelector(`#radio-family${i}`).value;
+  }
+}
+for (let i = 0; i < 6; i += 1) {
+  if (document.querySelector(`#checkboxSubj${i}`).checked === true) {
+    aprender += ` ${document.querySelector(`#checkboxSubj${i}`).value}`;
+  }
+}
+for (let i = 1; i < 11; i += 1) {
+  if (document.querySelector(`#input-radio${i}`).checked === true) {
+    rate = document.querySelector(`#input-radio${i}`).value;
+  }
+}
+ */
+
+
+
+
+

@@ -24,7 +24,7 @@
       </form>
     </header>
     <main id="flex-main">
-      <form id="evaluation-form" action="">
+      <form id="evaluation-form" action="" method="get">
         <div>
           <input class="input" id="input-name" type="text" placeholder="Nome" />
           <input class="input" id="input-lastname" type="text" placeholder="Sobrenome"/>
@@ -44,7 +44,7 @@
 
         <div>
           <p id="label-rate">Como você avalia a Trybewarts?</p>
-          <div id="#input-radio"></div>
+          <div id="input-radio"></div>
         </div>
 
         <p class="textarea">Deixe seu comentário:</p>
@@ -56,6 +56,8 @@
           <input type="checkbox" id="agreement" required/>
         
         <button id="submit-btn" type="submit" disabled>Enviar</button>
+        <div id="form">
+        </div>
       </form>
 
       <img
@@ -64,6 +66,7 @@
         alt="trybewarts-forms-logo"
       />
     </main>
+    
     <footer>Direitos reservados à Trybewarts©</footer>
     <script src="./script.js"></script>
   </body>
